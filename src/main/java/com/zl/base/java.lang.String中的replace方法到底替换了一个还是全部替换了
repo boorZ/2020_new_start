@@ -1,0 +1,20 @@
+
+通过API文档可以看出来String有4个替换方法：
+
+1. String   replace(char oldChar, char newChar)
+    描述：Returns a string resulting from replacing all occurrences of oldChar in this string with newChar.
+    谷歌翻译：返回使用newChar替换此字符串中所有出现的oldChar而产生的字符串。
+2. String   replace(CharSequence target, CharSequence replacement)
+    描述：Replaces each substring of this string that matches the literal target sequence with the specified literal replacement sequence.
+    谷歌翻译： 将与该文字目标序列匹配的此字符串的每个子字符串替换为指定的文字替换序列。
+3. String   replaceAll(String regex, String replacement)
+    描述：Replaces each substring of this string that matches the given regular expression with the given replacement.
+    谷歌翻译：将给定替换的给定正则表达式匹配的此字符串的每个子字符串替换。
+4. String   replaceFirst(String regex, String replacement)
+    描述：Replaces the first substring of this string that matches the given regular expression with the given replacement.
+    谷歌翻译：将给定替换的给定正则表达式匹配的此字符串的第一个子字符串替换。
+
+第一个方法是替换第一个没错，但是替换的是一个char,不是String。
+第二个方法是替换的CharSequence（包括String, StringBuffer, StringBuilder）,但是替换的是全部。
+第三个replaceAll是替换全部的字符串正则表达式，
+第四个是缺实是替换了第一个，但是人家名字写得明明白白的replaceFirst,而且替换的也是正则表达式。
