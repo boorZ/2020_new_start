@@ -1,0 +1,7 @@
+1、删除 C:\Users\用户名\.ssh文件夹下所有文件
+2、创建SSH
+    ssh-keygen -t rsa -C "15198299634@163.com" 邮件需要改成你自己的邮件
+3、在.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+4、在GitGub点击 Account settings -> SSH keys -> Add SSH Key 粘贴id_rsa.pub文件的内容
+
+
