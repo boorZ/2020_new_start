@@ -1,7 +1,6 @@
 package com.zl.utils.db;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.zl.utils.DBConfig;
 import org.junit.Test;
 
 import java.beans.PropertyVetoException;
