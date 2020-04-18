@@ -1,0 +1,26 @@
+## DataSource Config
+#spring:
+# datasource:
+#  driver-class-name: com.mysql.jdbc.Driver
+##  schema: classpath:db/schema-h2.sql
+##  data: classpath:db/data-h2.sql
+#  url: jdbc:mysql:127.0.0.1:3306/zl
+#  username: root
+#  password: Root123456
+server:
+ port: 8888
+spring:
+ datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/zl?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+  username: root
+  password: Root123456
+
+# Logger Config
+logging:
+ level:
+  com.baomidou.mybatisplus.samples.quickstart: debug
+
+# \u7533\u660E\u5B9E\u4F53\u7C7B\u7684\u4F4D\u7F6E\uFF0C\u4E0D\u914D\u7F6E\u4E5F\u53EF\u4EE5
+mybatis-plus:
+ typeAliasesPackage: com.example.mybatisplus.entities
