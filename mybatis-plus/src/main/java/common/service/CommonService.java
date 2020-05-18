@@ -2,7 +2,6 @@ package common.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import com.github.pagehelper.PageHelper;
 import common.repository.CommonBaseMapper;
 import common.utils.PageResultDTO;
 import org.apache.ibatis.annotations.Param;
@@ -40,14 +39,14 @@ public interface CommonService<T, PK extends Serializable, F> {
      * @return
      */
     default PageResultDTO<T> page(Integer pageIndex, Integer pageSize, String orderBy, Wrapper<T> queryWrapper) {
-        PageHelper.startPage(pageIndex, pageSize, orderBy);
-        List<T> list = this.getMapper().selectList(queryWrapper);
+//        PageHelper.startPage(pageIndex, pageSize, orderBy);
+//        List<T> list = this.getMapper().selectList(queryWrapper);
         PageResultDTO<T> pageResult = new PageResultDTO<>();
-        pageResult.setPageIndex(1);
-        pageResult.setTotal(list.size());
-        pageResult.setPageSize(list.size());
-        pageResult.setTotalPage(1);
-        pageResult.setResult(list);
+//        pageResult.setPageIndex(1);
+//        pageResult.setTotal(list.size());
+//        pageResult.setPageSize(list.size());
+//        pageResult.setTotalPage(1);
+//        pageResult.setResult(list);
         return pageResult;
     }
 

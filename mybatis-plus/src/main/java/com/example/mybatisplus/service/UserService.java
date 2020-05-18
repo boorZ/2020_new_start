@@ -1,7 +1,7 @@
 package com.example.mybatisplus.service;
 
 import com.example.mybatisplus.Filters.UserFilter;
-import com.example.mybatisplus.entities.User;
+import com.example.mybatisplus.entities.TUser;
 import common.service.CommonService;
 
 /**
@@ -10,5 +10,5 @@ import common.service.CommonService;
  * @email prometheus@noask-ai.com
  * @date 2020/3/24 16:11
  */
-public interface UserService extends CommonService<User, Integer, UserFilter> {
+public interface UserService extends CommonService<TUser, Integer, UserFilter> {
 }

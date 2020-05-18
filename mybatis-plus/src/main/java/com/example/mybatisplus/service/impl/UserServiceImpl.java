@@ -4,15 +4,13 @@ import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.mybatisplus.Filters.Test;
 import com.example.mybatisplus.Filters.UserFilter;
-import com.example.mybatisplus.entities.User;
-import com.example.mybatisplus.mappers.UserMapper;
+import com.example.mybatisplus.entities.TUser;
+import com.example.mybatisplus.mappers.TUserMapper;
 import com.example.mybatisplus.service.UserService;
 import common.repository.CommonBaseMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.awt.print.Book;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -25,16 +23,16 @@ import java.lang.reflect.Method;
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-    private UserMapper userMapper;
+    private TUserMapper userMapper;
 
     @Override
-    public CommonBaseMapper<User> getMapper() {
+    public CommonBaseMapper<TUser> getMapper() {
         return this.userMapper;
     }
 
     @Override
-    public Wrapper<User> buildQuery(UserFilter filter) {
-        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+    public Wrapper<TUser> buildQuery(UserFilter filter) {
+        QueryWrapper<TUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("name", filter.getName());
         queryWrapper.like("name", filter.getName());
         return null;
@@ -65,8 +63,6 @@ public class UserServiceImpl implements UserService {
 //        }
 
 
-
-
         // 获得该类所有方法
         Method[] declaredMethods = userFilterClass.getDeclaredMethods();
         // 获得所有属性对象
@@ -94,6 +90,7 @@ public class UserServiceImpl implements UserService {
     private void reflectField() {
 
     }
+
     /**
      * 拼接某属性的 get方法
      *

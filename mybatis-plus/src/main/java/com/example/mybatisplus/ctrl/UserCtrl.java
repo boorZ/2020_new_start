@@ -1,8 +1,10 @@
 package com.example.mybatisplus.ctrl;
 
-import com.example.mybatisplus.entities.User;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.example.mybatisplus.entities.TUser;
+import com.example.mybatisplus.mappers.TUserMapper;
 import com.example.mybatisplus.service.UserService;
-import common.utils.PageResultDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +27,23 @@ public class UserCtrl {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TUserMapper TUserMapper;
+
     @GetMapping("/findById")
     @ApiOperation(value = "findById", notes = "findById")
-    public User findById(@RequestParam(value = "id") Integer id) {
+    public TUser findById(@RequestParam(value = "id") Integer id) {
         return userService.findById(id);
     }
 
     @GetMapping("/page")
     @ApiOperation(value = "page", notes = "page")
-    public PageResultDTO<User> page(@RequestParam(value = "pageIndex") Integer pageIndex, Integer pageSize) {
-        return userService.page(pageIndex, pageSize, null, null);
+    public Page<TUser> page(@RequestParam(value = "pageIndex", defaultValue = "1") Integer pageIndex,
+                            @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize) {
+//        return userService.page(pageIndex, pageSize, null, null);
+        QueryWrapper<TUser> wrapper = new QueryWrapper<>();
+
+        Page<TUser> page = new Page<>(pageIndex,pageSize);
+        return TUserMapper.selectPage(page, wrapper);
     }
 }
