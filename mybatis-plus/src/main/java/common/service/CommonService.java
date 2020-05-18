@@ -2,7 +2,7 @@ package common.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import common.repository.CommonBaseMapper;
+import common.repository.CommonMapper;
 import common.utils.PageResultDTO;
 import org.apache.ibatis.annotations.Param;
 
@@ -24,7 +24,7 @@ public interface CommonService<T, PK extends Serializable, F> {
      *
      * @return 通用基础映射
      */
-    CommonBaseMapper<T> getMapper();
+    CommonMapper<T> getMapper();
     /* basics */
 
     Wrapper<T> buildQuery(F filter);

@@ -8,5 +8,5 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @email prometheus@noask-ai.com
  * @date 2020/3/24 16:09
  */
-public interface CommonBaseMapper<T> extends BaseMapper<T> {
+public interface CommonMapper<T> extends BaseMapper<T> {
 }

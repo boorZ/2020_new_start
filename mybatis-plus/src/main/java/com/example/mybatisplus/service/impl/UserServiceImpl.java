@@ -7,7 +7,7 @@ import com.example.mybatisplus.Filters.UserFilter;
 import com.example.mybatisplus.entities.TUser;
 import com.example.mybatisplus.mappers.TUserMapper;
 import com.example.mybatisplus.service.UserService;
-import common.repository.CommonBaseMapper;
+import common.repository.CommonMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
     private TUserMapper userMapper;
 
     @Override
-    public CommonBaseMapper<TUser> getMapper() {
+    public CommonMapper<TUser> getMapper() {
         return this.userMapper;
     }
 

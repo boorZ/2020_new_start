@@ -1,7 +1,7 @@
 package com.example.mybatisplus.mappers;
 
 import com.example.mybatisplus.entities.TUser;
-import common.repository.CommonBaseMapper;
+import common.repository.CommonMapper;
 
 /**
  * @author 周林
@@ -9,6 +9,6 @@ import common.repository.CommonBaseMapper;
  * @email prometheus@noask-ai.com
  * @date 2020/3/24 15:25
  */
-public interface TUserMapper extends CommonBaseMapper<TUser> {
+public interface TUserMapper extends CommonMapper<TUser> {
 
 }
