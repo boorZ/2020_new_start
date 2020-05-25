@@ -1,6 +1,7 @@
-package com.example.mybatisplus.entities;
+package com.example.mybatisplus.demo.entities;
 
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
@@ -12,8 +13,11 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
+@TableName(value = "t_user")
 public class TUser {
     @TableId
     private Long uId;
+
+//    @TableField(value = "u_name", jdbcType = JdbcType.VARCHAR)
     private String uName;
 }

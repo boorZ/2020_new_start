@@ -2,8 +2,8 @@ package com.example.mybatisplus;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.example.mybatisplus.entities.TUser;
-import com.example.mybatisplus.mappers.TUserMapper;
+import com.example.mybatisplus.demo.entities.TUser;
+import com.example.mybatisplus.demo.mappers.TUserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

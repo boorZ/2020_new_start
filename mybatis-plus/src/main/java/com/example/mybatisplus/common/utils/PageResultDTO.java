@@ -1,4 +1,4 @@
-package common.utils;
+package com.example.mybatisplus.common.utils;
 
 import java.util.List;
 

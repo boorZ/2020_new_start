@@ -1,9 +1,9 @@
-package common.service;
+package com.example.mybatisplus.common.service;
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.toolkit.Constants;
-import common.repository.CommonMapper;
-import common.utils.PageResultDTO;
+import com.example.mybatisplus.common.repository.CommonMapper;
+import com.example.mybatisplus.common.utils.PageResultDTO;
 import org.apache.ibatis.annotations.Param;
 
 import java.io.Serializable;
@@ -24,31 +24,26 @@ public interface CommonService<T, PK extends Serializable, F> {
      *
      * @return 通用基础映射
      */
-    CommonMapper<T> getMapper();
+    default CommonMapper<T> getMapper() {
+        return getMapper();
+    }
     /* basics */
 
-    Wrapper<T> buildQuery(F filter);
+//    Wrapper<T> buildQuery(F filter);
 
-    /**
-     * 分页
-     *
-     * @param pageIndex    页码
-     * @param pageSize     每页显示数量
-     * @param orderBy      排序
-     * @param queryWrapper 实体对象封装操作类（可以为 null）
-     * @return
-     */
-    default PageResultDTO<T> page(Integer pageIndex, Integer pageSize, String orderBy, Wrapper<T> queryWrapper) {
-//        PageHelper.startPage(pageIndex, pageSize, orderBy);
-//        List<T> list = this.getMapper().selectList(queryWrapper);
-        PageResultDTO<T> pageResult = new PageResultDTO<>();
-//        pageResult.setPageIndex(1);
-//        pageResult.setTotal(list.size());
-//        pageResult.setPageSize(list.size());
-//        pageResult.setTotalPage(1);
-//        pageResult.setResult(list);
-        return pageResult;
-    }
+    PageResultDTO<T> page(Integer pageIndex, Integer pageSize);
+//    /**
+//     * 分页
+//     *
+//     * @param pageIndex    页码
+//     * @param pageSize     每页显示数量
+//     * @param orderItems      排序
+//     * @param queryWrapper 实体对象封装操作类（可以为 null）
+//     * @return
+//     */
+//    default PageResultDTO<T> page(Integer pageIndex, Integer pageSize, List<OrderItem> orderItems, Wrapper<T> queryWrapper) {
+//        return this.getMapper().page(pageIndex, pageSize, orderItems, queryWrapper);
+//    }
 
     /**
      * 查询所有

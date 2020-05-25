@@ -1,7 +1,7 @@
-package com.example.mybatisplus.mappers;
+package com.example.mybatisplus.demo.mappers;
 
-import com.example.mybatisplus.entities.TUser;
-import common.repository.CommonMapper;
+import com.example.mybatisplus.demo.entities.TUser;
+import com.example.mybatisplus.common.repository.CommonMapper;
 
 /**
  * @author 周林
