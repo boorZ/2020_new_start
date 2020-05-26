@@ -1,0 +1,5 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 10.8.0.99:9201
