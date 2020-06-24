@@ -81,8 +81,8 @@ public class elasticSearchUtils {
         CredentialsProvider credentialsProvider = new BasicCredentialsProvider();
         credentialsProvider.setCredentials(AuthScope.ANY, usernamePasswordCredentials);
         RestClientBuilder restClientBuilder = RestClient.builder(httpHosts.toArray(new HttpHost[0]));
-        restClientBuilder.setRequestConfigCallback(builder -> builder.setSocketTimeout(1200000));
-        restClientBuilder.setHttpClientConfigCallback(httpClientBuilder -> httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider));
+//        restClientBuilder.setRequestConfigCallback(builder -> builder.setSocketTimeout(1200000));
+//        restClientBuilder.setHttpClientConfigCallback(httpClientBuilder -> httpClientBuilder.setDefaultCredentialsProvider(credentialsProvider));
         client = new RestHighLevelClient(restClientBuilder);
         logger.info("认证成功");
         return client;
