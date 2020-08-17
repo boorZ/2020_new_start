@@ -23,13 +23,23 @@ import java.io.IOException;
 public class Main {
     static final Log logger = LogFactory.getLog(Main.class);
 
-    public static void main(String[] args) throws IOException {
-        String url = "http://www.147xs.org/";
+    public static void main(String[] args) {
+        String url = "https://www.qimao.com/reader/index/150153/";
         String data = getUrlData(url);
         logger.info("开始打印数据： \n" + data);
 //        data.
         logger.info("\n结束打印数据");
     }
+//    public static void main(String[] args) {
+//        List<Integer> list = Arrays.asList(1, 2, 3, 4, 5);
+//        //        Collections.copy(newList, list);
+//        List<Integer> newList = new ArrayList<>(list);
+//
+//        List<Integer> integers = Arrays.asList(1, 2);
+//        newList.removeAll(integers);
+//        System.out.println(list);
+//        System.out.println(newList);
+//    }
 
     public static String getUrlData(String url) {
         //初始化一个httpclient
@@ -47,7 +57,7 @@ public class Main {
         }
         HttpEntity entity = response.getEntity();
         try {
-            data = EntityUtils.toString(entity, "utf-8");
+            data = EntityUtils.toString(entity, "gbk");
         } catch (IOException e) {
             e.printStackTrace();
         }
