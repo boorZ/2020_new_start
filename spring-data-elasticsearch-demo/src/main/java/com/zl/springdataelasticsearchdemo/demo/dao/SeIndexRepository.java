@@ -1,6 +1,6 @@
 package com.zl.springdataelasticsearchdemo.demo.dao;
 
-import com.zl.springdataelasticsearchdemo.demo.entity.Item;
+import com.zl.springdataelasticsearchdemo.demo.entity.SeIndexBo;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
 /**
@@ -9,5 +9,5 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  * @email prometheus@noask-ai.com
  * @date 2020/5/26 17:25
  */
-public interface ItemRepository extends ElasticsearchRepository<Item, Long> {
+public interface SeIndexRepository extends ElasticsearchRepository<SeIndexBo, Long> {
 }

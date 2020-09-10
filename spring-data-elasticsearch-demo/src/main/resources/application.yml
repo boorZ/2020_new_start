@@ -1,5 +1,6 @@
 spring:
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 10.8.0.99:9201
+  elasticsearch:
+    rest:
+      username: noask
+      password: noask123456
+      uris: 10.8.0.99:9201
