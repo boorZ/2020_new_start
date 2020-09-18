@@ -1,4 +1,4 @@
-package com.example.springdatajpademo.ctrl;
+package com.example.springdatajpademo.demo.ctrl;
 
 
 import io.swagger.annotations.Api;

@@ -1,19 +1,40 @@
 package com.example.springdatajpademo.common.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.repository.NoRepositoryBean;
-import org.springframework.data.repository.PagingAndSortingRepository;
+import com.example.springdatajpademo.common.entity.ResultPage;
+import com.example.springdatajpademo.common.entity.business.DeleteEntity;
 
-import java.io.Serializable;
+import java.util.List;
 
 /**
- * @author zhoulin
- * @date 2019/1/15
- * JpaRepository接口（SpringDataJPA提供的简单数据操作接口）
- * JpaSpecificationExecutor（SpringDataJPA提供的复杂查询接口)
- * Serializable（序列化接口）
- **/
-@NoRepositoryBean
-public interface CommonRepository<T, PK> extends JpaRepository<T, PK>, JpaSpecificationExecutor<T>, Serializable, PagingAndSortingRepository<T, PK> {
+ * @author 周林
+ * @Description 通用Repository
+ * @email prometheus@noask-ai.com
+ * @date 2020/9/10 17:54
+ */
+public interface CommonRepository {
+
+    void flush();
+
+    <T> T get(Class<T> clazz, Integer id);
+
+    //get(ErpUser.class, "userName = ? and id = ?", username, id)
+    <T> T get(Class<T> clazz, String where, Object... parameters);
+
+    <T> List<T> find(Class<T> clazz, String where, Object... parameters);
+
+    <T> List<T> find(Class<T> clazz, Integer firstResult, Integer maxResults, String where, Object... parameters);
+
+    <T> ResultPage<T> page(Class<T> clazz, Integer pageNumber, Integer pageSize, String where, Object... parameters);
+
+    <T extends DeleteEntity> T save(T model, Integer operatorId);
+
+    <T extends DeleteEntity> T update(T model, Integer operatorId);
+
+    <T> long count(Class<T> clazz, String where, Object... parameters);
+
+    <T> void delete(T entity);
+
+    <T> T save(T model);
+
+    <T> T update(T model);
 }

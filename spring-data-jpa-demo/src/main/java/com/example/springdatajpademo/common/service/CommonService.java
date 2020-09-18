@@ -1,6 +1,6 @@
 package com.example.springdatajpademo.common.service;
 
-import com.example.springdatajpademo.common.repository.CommonRepository;
+import com.example.springdatajpademo.common.repository.BaseRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -17,7 +17,7 @@ import java.util.List;
  * @date 2019/1/16
  */
 public interface CommonService<T, PK, F, I> {
-    CommonRepository<T, PK> getCommonRepository();
+    BaseRepository<T, PK> getCommonRepository();
 
     int DEFAULT_PAGE_NUM = 1;
 
