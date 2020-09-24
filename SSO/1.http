@@ -1,0 +1,13 @@
+POST http://10.8.0.110:8888/notice/page/filter
+Content-Type: application/json
+
+{
+  "pageIndex": 1,
+  "pageSize": 10
+}
+
+###
+GET http://10.8.0.110:8888/api/item?id=99
+Accept: application/json
+
+###
